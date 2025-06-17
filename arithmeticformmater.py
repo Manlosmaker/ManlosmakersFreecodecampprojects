@@ -1,4 +1,4 @@
-def arithmetic_arrange(problems, show_answers = False):
+def arithmetic_arranger(problems, show_answers = False):
     firstOperand = [] 
     secondOperand = []
     operator = []
@@ -15,10 +15,8 @@ def arithmetic_arrange(problems, show_answers = False):
         raise ValueError("Error Too many problems.")
     
     for i in range(len(problems)):
-        if operator[i] != "+" or operator[i] != "-":
+        if operator[i] == "+" and operator[i] == "-":
             raise ValueError("Error: Operator must be '+' or '-'.")
-        if firstOperand[i] is not int or secondOperand[i] is not int:
-            raise ValueError("Error: Numbers must only contain digits.")
         if len(firstOperand[i]) > 4 or len(secondOperand[i]) > 4:
             raise ValueError("Error: Numbers cannot be more than four digits.")
         def miL(): 
@@ -43,10 +41,12 @@ def arithmetic_arrange(problems, show_answers = False):
             fourthindividualline = ""
         thirdindividualLine = thirdindividualLine + ("-" * (max(len(secondOperand[i]), len(firstOperand[i])) + 2)+ 4 * " ") 
         secondOperandLine = secondOperandLine + siL() + "    "
-        return problems
 
     print(firstOperandLine)
     print(secondOperandLine)
     print(thirdindividualLine)
     print(fourthindividualline)
 
+
+
+arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
