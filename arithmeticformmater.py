@@ -4,7 +4,8 @@ def arithmetic_arrange(calculations, answer = False):
     operator = []
     firstOperandLine = ""
     secondOperandLine = ""
-
+    thirdindividualLine = ""
+    fourthindividualline = ""
     for item in calculations:
         splitItem = item.split(" ")
         firstOperand.append(splitItem[0])
@@ -26,14 +27,20 @@ def arithmetic_arrange(calculations, answer = False):
                 secondindividualLine = operator[i] + 2 * " " + secondOperand[i]
             else: 
                 secondindividualLine = operator[i] + (len(firstOperand[i])) * " " + secondOperand[i]
-
             return secondindividualLine
-        
+
+        if answer == True:
+            fourthindividualline  = fourthindividualline + "  " + str((int(firstOperand[i]) + int(secondOperand[i])))   + "    "
+        else:
+            fourthindividualline = ""
+        thirdindividualLine = thirdindividualLine + ("-" * (max(len(secondOperand[i]), len(firstOperand[i])) + 2)+ 4 * " ") 
         secondOperandLine = secondOperandLine + siL() + "    "
+
     print(firstOperandLine)
     print(secondOperandLine)
-    print(("-" * (max(len(secondOperand[i]), len(firstOperand[i])) + 2) + 4 * " ") * len(calculations))
+    print(thirdindividualLine)
+    print(fourthindividualline)
 
 
 calculations = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
-arithmetic_arrange(calculations)
+arithmetic_arrange(calculations, True)
