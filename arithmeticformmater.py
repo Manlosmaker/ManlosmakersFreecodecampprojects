@@ -35,8 +35,10 @@ def arithmetic_arranger(problems, show_answers = False):
                 secondindividualLine = operator[i] + (len(firstOperand[i])) * " " + secondOperand[i]
             return secondindividualLine
 
-        if show_answers == True:
-            fourthindividualline  = fourthindividualline + "  " + str((int(firstOperand[i]) + int(secondOperand[i])))   + "    "
+        if show_answers == True and len(str(int(firstOperand[i]) + int(secondOperand[i]))) == max(len(firstOperand[i]),len(secondOperand[i])):
+            fourthindividualline = fourthindividualline + "  " + str((int(firstOperand[i]) + int(secondOperand[i])))   + "    "
+        elif show_answers == True and len(str(int(firstOperand[i]) + int(secondOperand[i]))) != max(len(firstOperand[i]),len(secondOperand[i])):
+            fourthindividualline = fourthindividualline + " " + str((int(firstOperand[i]) + int(secondOperand[i])))   + "    "
         else:
             fourthindividualline = ""
         thirdindividualLine = thirdindividualLine + ("-" * (max(len(secondOperand[i]), len(firstOperand[i])) + 2)+ 4 * " ") 
