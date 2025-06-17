@@ -1,4 +1,4 @@
-def arithmetic_arranger(problems, show_answers = False):
+def arithmetic_arranger(problems, show_answers=False):
     firstOperand = [] 
     secondOperand = []
     operator = []
@@ -43,14 +43,16 @@ def arithmetic_arranger(problems, show_answers = False):
             fourthindividualline = ""
         thirdindividualLine = thirdindividualLine + ("-" * (max(len(secondOperand[i]), len(firstOperand[i])) + 2)+ 4 * " ") 
         secondOperandLine = secondOperandLine + siL() + "    "
-
-    print(firstOperandLine)
-    print(secondOperandLine)
-    print(thirdindividualLine)
-    if fourthindividualline != "":
-        print(fourthindividualline)
-    else:
-        pass
+    (firstOperandLine)
+#    if fourthindividualline != "":
+#        print(fourthindividualline)
+#    else:
+#        pass
+    problems = f"{firstOperandLine}\n{secondOperandLine}\n{thirdindividualLine}\n{fourthindividualline}"
+    return problems
 
 
 #arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])
+
+
+print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
