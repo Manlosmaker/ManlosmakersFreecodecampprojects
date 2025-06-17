@@ -1,4 +1,4 @@
-def arithmetic_arrange(calculations, answer = False):
+def arithmetic_arrange(problems, show_answers = False):
     firstOperand = [] 
     secondOperand = []
     operator = []
@@ -6,13 +6,21 @@ def arithmetic_arrange(calculations, answer = False):
     secondOperandLine = ""
     thirdindividualLine = ""
     fourthindividualline = ""
-    for item in calculations:
+    for item in problems:
         splitItem = item.split(" ")
         firstOperand.append(splitItem[0])
         secondOperand.append(splitItem[2])
         operator.append(splitItem[1])
+    if len(firstOperand) > 5:
+        raise ValueError("Error Too many problems.")
     
-    for i in range(len(calculations)):
+    for i in range(len(problems)):
+        if operator[i] != "+" or operator[i] != "-":
+            raise ValueError("Error: Operator must be '+' or '-'.")
+        if firstOperand[i] is not int or secondOperand[i] is not int:
+            raise ValueError("Error: Numbers must only contain digits.")
+        if len(firstOperand[i]) > 4 or len(secondOperand[i]) > 4:
+            raise ValueError("Error: Numbers cannot be more than four digits.")
         def miL(): 
             if len(firstOperand[i]) >= len(secondOperand[i]):
                 individialLine = 2 * " " + firstOperand[i]
@@ -29,18 +37,16 @@ def arithmetic_arrange(calculations, answer = False):
                 secondindividualLine = operator[i] + (len(firstOperand[i])) * " " + secondOperand[i]
             return secondindividualLine
 
-        if answer == True:
+        if show_answers == True:
             fourthindividualline  = fourthindividualline + "  " + str((int(firstOperand[i]) + int(secondOperand[i])))   + "    "
         else:
             fourthindividualline = ""
         thirdindividualLine = thirdindividualLine + ("-" * (max(len(secondOperand[i]), len(firstOperand[i])) + 2)+ 4 * " ") 
         secondOperandLine = secondOperandLine + siL() + "    "
+        return problems
 
     print(firstOperandLine)
     print(secondOperandLine)
     print(thirdindividualLine)
     print(fourthindividualline)
 
-
-calculations = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
-arithmetic_arrange(calculations, True)
