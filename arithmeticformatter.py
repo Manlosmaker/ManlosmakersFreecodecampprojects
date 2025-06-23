@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 5f23bf0cda047aa3a98c73aa6ce841a3909c4d93
 def arithmetic_arranger(problems, show_answers=False):
     line1 = ""
     line2 = ""
