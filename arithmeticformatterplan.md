@@ -19,3 +19,6 @@ Split the string(s) into a smaller list
 Check for errors
 Put everything in right aligned
 d returns the problems arranged vertically and side-by-side
+
+
+Issues were with chromium so from now one will only use that for projects.

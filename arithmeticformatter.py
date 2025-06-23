@@ -1,17 +1,10 @@
-<<<<<<< HEAD
+
 def arithmetic_arranger(problems, show_answers=False):
-=======
-def arithmetic_arranger(problems, show_answers=True):
->>>>>>> a0f961383ecd0086dea27f3262d42c86ef9ba958
     line1 = ""
     line2 = ""
     line3 = ""
     line4 = ""
-<<<<<<< HEAD
  
-=======
-
->>>>>>> a0f961383ecd0086dea27f3262d42c86ef9ba958
     if len(problems) > 5:
         return "Error: Too many problems."
     
@@ -51,4 +44,4 @@ def arithmetic_arranger(problems, show_answers=True):
 
     problems = "\n".join(lines)
     return problems
-print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
+print(arithmetic_arranger(["3801 - 2", "123 + 49"]))
